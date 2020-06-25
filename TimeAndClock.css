@@ -1,0 +1,120 @@
+*{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: consolas;
+}
+
+body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      min-height: 100vh;
+      background: #091921;
+}
+.clock{
+      width: 350px;
+      height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 8px solid #091921;
+      border-radius: 50%;
+      box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.05),
+                  20px 20px 20px rgba(0, 0, 0, 0.3),
+                  inset -8px -8px 15px rgba(255, 255, 255, 0.05),
+                  inset 20px 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.clock::before{
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #2196f3;
+      z-index: 10000;
+      border-radius: 50%;
+}
+
+.hour,
+.min,
+.sec{
+      position: absolute;
+}
+
+.hour, .hr{
+      width: 200px;
+      height: 200px;
+}
+
+.min, .mn{
+      width: 230px;
+      height: 230px;
+}
+
+.sec, .sc{
+      width: 250px;
+      height: 250px;
+}
+
+.hr, .mn, .sc{
+      display: flex;
+      justify-content: center;
+      position: absolute;
+}
+
+.hr::before{
+      content: '';
+      position: absolute;
+      width: 8px;
+      height: 100px;
+      background: indianred;
+      /* border-radius: 50%; */
+      border-radius: 6px 6px 0 0;
+}
+
+.mn::before{
+      content: '';
+      position: absolute;
+      width: 4px;
+      height: 110px;
+      background: rgb(0, 255, 178);
+      border-radius: 6px 6px 0 0;
+}
+
+.sc::before{
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 120px;
+      background: #2196f3;
+      border-radius: 6px 6px 0 0;
+}
+
+#digitalClock{
+      display: flex;
+      color: #fff;
+      font-size: 4em;
+      margin-top: 20px;
+      -webkit-box-reflect: below 1px linear-gradient(transparent, rgba(255, 255, 255, 0.109));
+}
+
+#seconds{
+      color: #2196f3;
+      animation: animate .9s infinite;
+}
+
+@keyframes animate{
+      100%{
+            transform: scale(1.1);
+      }
+}
+
+#hour{
+      color: indianred;
+}
+
+#minutes{
+      color: rgb(0, 255, 178);
+}
