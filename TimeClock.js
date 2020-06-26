@@ -11,16 +11,27 @@ const sc = document.querySelector('#sc');
             hr.style.transform = `rotateZ(${hh+(mm/12)}deg)`;
             mn.style.transform = `rotateZ(${mm}deg)`;
             sc.style.transform = `rotateZ(${ss}deg)`;
-
+            
+            
             let hour = document.querySelector('#hour');
             let minutes = document.querySelector('#minutes');
             let seconds = document.querySelector('#seconds');
+            let miliS = document.querySelector('#miliS');
             let ampm = document.querySelector('#ampm');
 
             let h = new Date().getHours();
             let m = new Date().getMinutes();
             let s = new Date().getSeconds();
+            let mls = new Date().getMilliseconds();
             let am = "a.m";
+
+            // if(mls<="0")
+            // {
+            //       seconds.style.transform = `scale(0)`;
+            // }
+            // else if(mls=="1000"){
+            //       seconds.style.transform = `scale(1.1)`;
+            // }
 
             if(h > 12)
             {
@@ -35,6 +46,7 @@ const sc = document.querySelector('#sc');
 
             hour.innerHTML=h+":";
             minutes.innerHTML=m+":";
-            seconds.innerHTML=s+"&nbsp";
+            seconds.innerHTML=s+":";
+            // miliS.innerHTML=mls+"&nbsp";
             ampm.innerHTML=am;
       });

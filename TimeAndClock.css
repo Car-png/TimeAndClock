@@ -102,13 +102,6 @@ body{
 
 #seconds{
       color: #2196f3;
-      animation: animate .9s infinite;
-}
-
-@keyframes animate{
-      100%{
-            transform: scale(1.1);
-      }
 }
 
 #hour{
